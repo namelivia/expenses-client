@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "title": "Expenses App",
+    "list": "List",
+    "new": "New"
+  },
+  "welcome": {
+    "welcome": "Welcome to the expenses app"
+  },
+  "list": {
+    "title": "Expense list"
+  },
+  "expenseCard": {
+    "waterIt": "Water it",
+    "details": "Details",
+    "nextWatering": "Next watering in {days} days"
+  },
+  "expenseDetails": {
+    "name": "Name",
+    "description": "Description",
+    "waterEvery": "Water every",
+    "days": "days",
+    "lastWatering": "Last watering",
+    "nextWatering": "Next watering",
+    "deleteIt": "Delete it"
+  },
+  "addJournalEntry": {
+    "add": "Add",
+    "insertEntryManually": "Insert entry manually:",
+    "messageContent": "Message content"
+  },
+  "newExpense": {
+    "name": "Name:",
+    "enterExpenseName": "Enter the name",
+    "description": "Description:",
+    "enterExpenseDescription": "Enter the description",
+    "image": "Image:",
+    "imageForTheExpense": "Image for the expense",
+    "submit": "Submit",
+    "reset": "Reset"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "title": "App Expenseas",
+    "list": "Lista",
+    "new": "Nueva"
+  },
+  "welcome": {
+    "welcome": "Bienvenido a la app de expenseas"
+  },
+  "list": {
+    "title": "Lista de expenseas"
+  },
+  "expenseCard": {
+    "waterIt": "Regarla",
+    "details": "Detalles",
+    "nextWatering": "Próximo riego en {days} días"
+  },
+  "expenseDetails": {
+    "name": "Nombre",
+    "description": "Descripción",
+    "waterEvery": "Regar cada",
+    "days": "días",
+    "lastWatering": "Último riego",
+    "nextWatering": "Próximo riego",
+    "deleteIt": "Eliminarla"
+  },
+  "addJournalEntry": {
+    "add": "Añadir",
+    "insertEntryManually": "Añadir entrada manual:",
+    "messageContent": "Contenido del mensaje"
+  },
+  "newExpense": {
+    "name": "Nombre:",
+    "enterExpenseName": "Introduce el nombre",
+    "description": "Descripción:",
+    "enterExpenseDescription": "Introduce la descripción",
+    "image": "Imagen:",
+    "imageForTheExpense": "Imagen de la expensea",
+    "submit": "Guardar",
+    "reset": "Limpiar"
+  }
+}
