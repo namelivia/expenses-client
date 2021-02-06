@@ -35,3 +35,10 @@ export const deleteExpense = async (expenseId) => {
   );
   return response.data;
 };
+
+export const getTotals = async () => {
+  const response = await axios.get(
+    `${process.env.VUE_APP_API_ENDPOINT}/expenses/totals`
+  );
+  return response.data;
+};
