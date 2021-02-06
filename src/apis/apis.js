@@ -54,3 +54,11 @@ export const getCategories = async () => {
   );
   return response.data;
 };
+
+export const postCategory = async (data) => {
+  const response = await axios.post(
+    `${process.env.VUE_APP_API_ENDPOINT}/categories`,
+    data
+  );
+  return response.data;
+};

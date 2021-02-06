@@ -10,6 +10,8 @@
                   span(v-t="'navigation.list'")
                 b-nav-item(to="/new")
                   span(v-t="'navigation.new'")
+                b-nav-item(to="/new-category")
+                  span(v-t="'navigation.newCategory'")
             b-navbar-nav.ml-auto
                 b-nav-item {{ $i18n.locale }}
                 b-nav-item {{ currentUserEmail }}

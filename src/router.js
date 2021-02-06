@@ -34,6 +34,12 @@ const router = new Router({
       component: () => import("./views/ExpenseDetail/ExpenseDetail.vue"),
       props: true,
     },
+    {
+      path: "/new-category",
+      name: "new-category",
+      component: () => import("./views/NewCategory/NewCategory.vue"),
+      props: true,
+    },
   ],
 });
 
