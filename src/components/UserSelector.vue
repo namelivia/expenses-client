@@ -38,7 +38,7 @@ export default {
         this.users.map((user) => {
           return {
             value: user.user_id,
-            text: user.user_id,
+            text: user.name,
           };
         })
       );
