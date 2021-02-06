@@ -1,19 +1,41 @@
 <template lang="pug">
 section
     h3(v-if='loading' ) Loading...
-    pre(v-else)
-        | {{ totals }}
+    ul(v-else)
+        li(v-for='debt in debts' :key='debt.user')
+            | {{ debt.user }} owes {{debt.amount}}
 </template>
 
 <script>
 import { getTotals } from "@/apis/apis";
 import { errorToast } from "@/helpers/ui";
+import { valueFromInt } from "@/apis/helpers";
 export default {
   data: function () {
     return {
       totals: [],
-      loading: true,
+      loading: false,
     };
+  },
+  computed: {
+    debts: function () {
+      let max = Math.max.apply(
+        Math,
+        this.totals.map(function (total) {
+          return total.total;
+        })
+      );
+      return this.totals
+        .map(function (total) {
+          if (total.total < max) {
+            return {
+              user: total.user,
+              amount: valueFromInt(max - total.total),
+            };
+          }
+        })
+        .filter((total) => total);
+    },
   },
   mounted: function () {
     this.loadTotals();

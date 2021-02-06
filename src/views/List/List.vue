@@ -1,8 +1,8 @@
 <template lang="pug">
 section
+    totals
     h1(v-t="'list.title'")
     expense-list
-    totals
 </template>
 
 <script>
