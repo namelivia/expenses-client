@@ -42,3 +42,8 @@ export const getTotals = async () => {
   );
   return response.data;
 };
+
+export const getUsers = async () => {
+  const response = await axios.get(`${process.env.VUE_APP_API_ENDPOINT}/users`);
+  return response.data;
+};

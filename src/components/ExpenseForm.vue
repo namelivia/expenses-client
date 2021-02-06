@@ -28,19 +28,7 @@
                 required
                 :placeholder="$t('expenseForm.enterExpenseValue')"
             )
-        b-form-group(
-            id="user-input-group"
-            :label="$t('expenseForm.user')"
-            label-for="user"
-        )
-            b-form-input(
-                id="user"
-                name="user"
-                v-model="expense.user"
-                type="text"
-                required
-                :placeholder="$t('expenseForm.enterExpenseUser')"
-            )
+        user-selector(@selected="onUserSelected" :selected="expense.user")
         b-form-group(
             id="category-input-group"
             :label="$t('expenseForm.category')"
@@ -60,7 +48,11 @@
 </template>
 <script>
 import { valueToInt } from "@/apis/helpers";
+import UserSelector from "@/components/UserSelector";
 export default {
+  components: {
+    UserSelector,
+  },
   props: {
     initialData: {
       type: Object,
@@ -94,6 +86,9 @@ export default {
     },
   },
   methods: {
+    onUserSelected(selectedUser) {
+      this.expense.user = selectedUser;
+    },
     async onSubmit(evt) {
       if (evt) {
         evt.preventDefault();
