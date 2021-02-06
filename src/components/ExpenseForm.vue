@@ -16,7 +16,7 @@
         b-form-group(
             id="value-input-group"
             :label="$t('expenseForm.value')"
-            label-for="category"
+            label-for="value"
         )
             b-form-input(
                 id="value"
@@ -29,19 +29,7 @@
                 :placeholder="$t('expenseForm.enterExpenseValue')"
             )
         user-selector(@selected="onUserSelected" :selected="expense.user")
-        b-form-group(
-            id="category-input-group"
-            :label="$t('expenseForm.category')"
-            label-for="category"
-        )
-            b-form-input(
-                id="category"
-                name="category"
-                v-model="expense.category"
-                type="text"
-                required
-                :placeholder="$t('expenseForm.enterExpenseCategory')"
-            )
+        category-selector(@selected="onCategorySelected" :selected="expense.category")
         .mt-4
         b-button.mr-2(type="submit" variant="primary") {{$t('newExpense.submit')}}
         b-button(type="reset" variant="danger") {{$t('newExpense.reset')}}
@@ -49,9 +37,11 @@
 <script>
 import { valueToInt } from "@/apis/helpers";
 import UserSelector from "@/components/UserSelector";
+import CategorySelector from "@/components/CategorySelector";
 export default {
   components: {
     UserSelector,
+    CategorySelector,
   },
   props: {
     initialData: {
@@ -88,6 +78,9 @@ export default {
   methods: {
     onUserSelected(selectedUser) {
       this.expense.user = selectedUser;
+    },
+    onCategorySelected(selectedCategory) {
+      this.expense.category = selectedCategory;
     },
     async onSubmit(evt) {
       if (evt) {

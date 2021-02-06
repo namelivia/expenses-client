@@ -47,3 +47,10 @@ export const getUsers = async () => {
   const response = await axios.get(`${process.env.VUE_APP_API_ENDPOINT}/users`);
   return response.data;
 };
+
+export const getCategories = async () => {
+  const response = await axios.get(
+    `${process.env.VUE_APP_API_ENDPOINT}/categories`
+  );
+  return response.data;
+};
