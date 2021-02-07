@@ -51,7 +51,7 @@ export default {
           name: "",
           value: null,
           user: null,
-          category: null,
+          category_id: null,
         };
       },
     },
@@ -63,7 +63,7 @@ export default {
         name: "",
         value: null,
         user: null,
-        category: null,
+        category_id: null,
       },
     };
   },
@@ -80,7 +80,7 @@ export default {
       this.expense.user = selectedUser;
     },
     onCategorySelected(selectedCategory) {
-      this.expense.category = selectedCategory;
+      this.expense.category_id = selectedCategory;
     },
     async onSubmit(evt) {
       if (evt) {
@@ -97,7 +97,7 @@ export default {
       this.expense.name = "";
       this.expense.value = null;
       this.expense.user = null;
-      this.expense.category = null;
+      this.expense.category_id = null;
       this.show = false;
       this.$nextTick(() => {
         this.show = true;
