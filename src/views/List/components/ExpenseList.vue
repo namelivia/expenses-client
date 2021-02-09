@@ -17,7 +17,7 @@ section
             :name="expense.name"
             :value="expense.value"
             :user="expense.user"
-            :category="expense.category"
+            :category="expense.category.name"
             :date="expense.date"
         )
 </template>

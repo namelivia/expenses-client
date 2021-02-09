@@ -37,7 +37,7 @@ export default {
       return options.concat(
         this.categories.map((category) => {
           return {
-            value: category.name,
+            value: category.id,
             text: category.name,
           };
         })
