@@ -33,7 +33,7 @@ export default {
   methods: {
     async getCurrentUser() {
       const currentUser = await store.getCurrentUser();
-      this.currentUserEmail = currentUser.email;
+      this.currentUserEmail = currentUser.name;
     },
   },
 };
