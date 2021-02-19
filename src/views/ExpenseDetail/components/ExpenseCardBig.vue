@@ -4,7 +4,7 @@ section(v-else)
     p.mb-0 Id: {{ expense.id}}
     p.mb-0 {{$t("expenseDetails.name")}}: {{ expense.name }}
     p.mb-0 {{$t("expenseDetails.value")}}: {{ formattedValue }}
-    p.mb-0 {{$t("expenseDetails.category")}}: {{ expense.category }}
+    p.mb-0 {{$t("expenseDetails.category")}}: {{ expense.category.name }}
     p.mb-0 {{$t("expenseDetails.user")}}: {{ expense.user_name }}
     p.mb-0 {{$t("expenseDetails.date")}}: {{ formattedDate }}
     .mt-4
