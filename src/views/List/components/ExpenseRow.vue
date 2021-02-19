@@ -2,7 +2,7 @@
     tr
         td {{ formattedValue }}
         td {{ name }}
-        td {{ user }}
+        td {{ user_name }}
         td {{ category }}
         td {{ formattedDate }}
         td
@@ -25,7 +25,7 @@ export default {
       type: Number,
       default: 0,
     },
-    user: {
+    user_name: {
       type: String,
       default: "",
     },

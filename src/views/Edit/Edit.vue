@@ -25,7 +25,7 @@ export default {
       form: {
         name: "",
         value: null,
-        user: null,
+        user_id: null,
         category: null,
       },
       show: true,
@@ -41,7 +41,7 @@ export default {
         //TODO: I can't do this using the spread operator
         this.form.name = expense.name;
         this.form.value = valueFromInt(expense.value);
-        this.form.user = expense.user;
+        this.form.user_id = expense.user_id;
         this.form.category = expense.category;
       } catch (err) {
         this.$bvToast.toast(`Expense can't be retrieved`, errorToast);

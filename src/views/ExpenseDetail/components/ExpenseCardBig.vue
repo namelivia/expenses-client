@@ -5,7 +5,7 @@ section(v-else)
     p.mb-0 {{$t("expenseDetails.name")}}: {{ expense.name }}
     p.mb-0 {{$t("expenseDetails.value")}}: {{ formattedValue }}
     p.mb-0 {{$t("expenseDetails.category")}}: {{ expense.category }}
-    p.mb-0 {{$t("expenseDetails.user")}}: {{ expense.user }}
+    p.mb-0 {{$t("expenseDetails.user")}}: {{ expense.user_name }}
     p.mb-0 {{$t("expenseDetails.date")}}: {{ formattedDate }}
     .mt-4
     b-button(variant="danger" v-on:click="onDelete" v-t="'expenseDetails.deleteIt'")

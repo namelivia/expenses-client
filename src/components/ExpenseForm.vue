@@ -28,7 +28,7 @@
                 required
                 :placeholder="$t('expenseForm.enterExpenseValue')"
             )
-        user-selector(@selected="onUserSelected" :selected="expense.user")
+        user-selector(@selected="onUserSelected" :selected="expense.user_id")
         category-selector(@selected="onCategorySelected" :selected="expense.category")
         .mt-4
         b-button.mr-2(type="submit" variant="primary") {{$t('newExpense.submit')}}
@@ -50,7 +50,7 @@ export default {
         return {
           name: "",
           value: null,
-          user: null,
+          user_id: null,
           category_id: null,
         };
       },
@@ -62,7 +62,7 @@ export default {
       expense: {
         name: "",
         value: null,
-        user: null,
+        user_id: null,
         category_id: null,
       },
     };
@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     onUserSelected(selectedUser) {
-      this.expense.user = selectedUser;
+      this.expense.user_id = selectedUser;
     },
     onCategorySelected(selectedCategory) {
       this.expense.category_id = selectedCategory;
@@ -96,7 +96,7 @@ export default {
       }
       this.expense.name = "";
       this.expense.value = null;
-      this.expense.user = null;
+      this.expense.user_id = null;
       this.expense.category_id = null;
       this.show = false;
       this.$nextTick(() => {

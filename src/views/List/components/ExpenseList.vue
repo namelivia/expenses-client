@@ -16,7 +16,7 @@ section
             :id="expense.id"
             :name="expense.name"
             :value="expense.value"
-            :user="expense.user"
+            :user="expense.user_name"
             :category="expense.category.name"
             :date="expense.date"
         )
