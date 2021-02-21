@@ -3,7 +3,7 @@ section
     h3(v-if='loading' ) Loading...
     ul(v-else)
         li(v-for='debt in debts' :key='debt.user')
-            | {{ debt.user }} owes {{debt.amount}}
+            | {{ debt.user }} {{$t("totals.owes")}} {{debt.amount}}
 </template>
 
 <script>
@@ -49,6 +49,7 @@ export default {
       try {
         this.totals = await getTotals();
       } catch (err) {
+        //TODO: This needs to be translated
         this.$bvToast.toast(`Totals can't be retrieved`, errorToast);
       } finally {
         this.loading = false;

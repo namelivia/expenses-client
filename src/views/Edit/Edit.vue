@@ -42,7 +42,7 @@ export default {
         this.form.name = expense.name;
         this.form.value = valueFromInt(expense.value);
         this.form.user_id = expense.user_id;
-        this.form.category = expense.category;
+        this.form.category = expense.category.id;
       } catch (err) {
         this.$bvToast.toast(`Expense can't be retrieved`, errorToast);
       } finally {
@@ -53,9 +53,11 @@ export default {
       try {
         putExpense(this.expenseId, data);
         router.replace("/list", () => {
+          //TODO: This needs to be translated
           this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast);
         });
       } catch (err) {
+        //TODO: This needs to be translate d
         this.$bvToast.toast(`Expense could not be updated`, errorToast);
       }
     },

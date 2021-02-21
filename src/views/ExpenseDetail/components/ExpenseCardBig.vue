@@ -10,7 +10,7 @@ section(v-else)
     .mt-4
     b-button(variant="danger" v-on:click="onDelete" v-t="'expenseDetails.deleteIt'")
     router-link(:to="{ name: 'edit', params: { expenseId: this.expense.id}}")
-        b-button.ml-2(v-t="'expenseCard.editIt'")
+        b-button.ml-2(v-t="'expenseDetails.editIt'")
 </template>
 
 <script>

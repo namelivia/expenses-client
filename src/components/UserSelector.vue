@@ -2,7 +2,7 @@
     b-spinner(v-if="loading" label="Loading...")
     b-form-group(
         id="user-input-group"
-        :label="$t('newExpense.user')"
+        :label="$t('userSelector.user')"
         label-for="user"
         v-else
     )
@@ -33,6 +33,7 @@ export default {
   },
   computed: {
     userOptions: function () {
+      //TODO: This needs to be translated
       let options = [{ value: "", text: "Select a user", disabled: true }];
       return options.concat(
         this.users.map((user) => {
@@ -60,6 +61,7 @@ export default {
       try {
         this.users = await getUsers();
       } catch (err) {
+        //TODO: This needs to be translated
         this.$bvToast.toast(`Users can't be retrieved`, errorToast);
       } finally {
         this.loading = false;

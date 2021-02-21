@@ -1,42 +1,51 @@
 {
   "navigation": {
-    "title": "App Expenseas",
+    "title": "App Gastos",
     "list": "Lista",
-    "new": "Nueva"
+    "new": "Nuevo",
+    "newCategory": "Nueva Categoría"
   },
   "welcome": {
-    "welcome": "Bienvenido a la app de expenseas"
+    "welcome": "Bienvenido a la app de gastos"
   },
   "list": {
-    "title": "Lista de expenseas"
-  },
-  "expenseCard": {
-    "waterIt": "Regarla",
-    "details": "Detalles",
-    "nextWatering": "Próximo riego en {days} días"
+    "title": "Lista de gastos"
   },
   "expenseDetails": {
     "name": "Nombre",
-    "description": "Descripción",
-    "waterEvery": "Regar cada",
-    "days": "días",
-    "lastWatering": "Último riego",
-    "nextWatering": "Próximo riego",
-    "deleteIt": "Eliminarla"
+    "value": "Valor",
+    "category": "Categoría",
+    "user": "Usuario",
+    "date": "Fecha",
+    "editIt": "Editarlo",
+    "deleteIt": "Eliminarlo"
   },
-  "addJournalEntry": {
-    "add": "Añadir",
-    "insertEntryManually": "Añadir entrada manual:",
-    "messageContent": "Contenido del mensaje"
+  "expenseRow": {
+    "details": "Detalles"
   },
-  "newExpense": {
+  "expenseForm": {
     "name": "Nombre:",
     "enterExpenseName": "Introduce el nombre",
-    "description": "Descripción:",
-    "enterExpenseDescription": "Introduce la descripción",
-    "image": "Imagen:",
-    "imageForTheExpense": "Imagen de la expensea",
+    "value": "Valor:",
+    "enterExpenseValue": "Introduce el valor"
+  },
+  "userSelector": {
+    "user": "Usuario:"
+  },
+  "categorySelector": {
+    "category": "Categoría:"
+  },
+  "newExpense": {
     "submit": "Guardar",
-    "reset": "Limpiar"
+    "reset": "Reiniciar"
+  },
+  "newCategory": {
+    "name": "Nombre:",
+    "enterCategoryName": "Introduce el nombre",
+    "submit": "Guardar",
+    "reset": "Reiniciar"
+  },
+  "totals": {
+    "owes": "debe"
   }
 }

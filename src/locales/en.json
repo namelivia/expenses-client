@@ -2,7 +2,8 @@
   "navigation": {
     "title": "Expenses App",
     "list": "List",
-    "new": "New"
+    "new": "New",
+    "newCategory": "New Category"
   },
   "welcome": {
     "welcome": "Welcome to the expenses app"
@@ -10,33 +11,41 @@
   "list": {
     "title": "Expense list"
   },
-  "expenseCard": {
-    "waterIt": "Water it",
-    "details": "Details",
-    "nextWatering": "Next watering in {days} days"
-  },
   "expenseDetails": {
     "name": "Name",
-    "description": "Description",
-    "waterEvery": "Water every",
-    "days": "days",
-    "lastWatering": "Last watering",
-    "nextWatering": "Next watering",
-    "deleteIt": "Delete it"
+    "value": "Value",
+    "category": "Category",
+    "user": "User",
+    "date": "Date",
+    "editIt": "Edit It",
+    "deleteIt": "Delete It"
   },
-  "addJournalEntry": {
-    "add": "Add",
-    "insertEntryManually": "Insert entry manually:",
-    "messageContent": "Message content"
+  "expenseRow": {
+    "details": "Details"
   },
-  "newExpense": {
+  "expenseForm": {
     "name": "Name:",
     "enterExpenseName": "Enter the name",
-    "description": "Description:",
-    "enterExpenseDescription": "Enter the description",
-    "image": "Image:",
-    "imageForTheExpense": "Image for the expense",
+    "value": "Value:",
+    "enterExpenseValue": "Enter the value"
+  },
+  "userSelector": {
+    "user": "User:"
+  },
+  "categorySelector": {
+    "category": "Category:"
+  },
+  "newExpense": {
     "submit": "Submit",
     "reset": "Reset"
+  },
+  "newCategory": {
+    "name": "Name:",
+    "enterCategoryName": "Enter the name",
+    "submit": "Submit",
+    "reset": "Reset"
+  },
+  "totals": {
+    "owes": "owes"
   }
 }

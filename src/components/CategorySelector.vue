@@ -2,7 +2,7 @@
     b-spinner(v-if="loading" label="Loading...")
     b-form-group(
         id="category-input-group"
-        :label="$t('newExpense.category')"
+        :label="$t('categorySelector.category')"
         label-for="category"
         v-else
     )
@@ -33,6 +33,7 @@ export default {
   },
   computed: {
     categoryOptions: function () {
+      //TODO: This needs to be translated
       let options = [{ value: "", text: "Select a category", disabled: true }];
       return options.concat(
         this.categories.map((category) => {
@@ -60,6 +61,7 @@ export default {
       try {
         this.categories = await getCategories();
       } catch (err) {
+        //TODO: This needs to be translated
         this.$bvToast.toast(`Categories can't be retrieved`, errorToast);
       } finally {
         this.loading = false;
