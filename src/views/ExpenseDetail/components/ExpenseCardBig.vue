@@ -36,7 +36,13 @@ export default {
       return new Date(this.expense.date).toLocaleString();
     },
     formattedValue: function () {
-      if (this.expense.value > 0) return valueFromInt(this.expense.value);
+      let formatter = new Intl.NumberFormat("es-ES", {
+        style: "currency",
+        currency: "EUR",
+      });
+      if (this.expense.value > 0) {
+        return formatter.format(valueFromInt(this.expense.value));
+      }
       return this.expense.value;
     },
   },

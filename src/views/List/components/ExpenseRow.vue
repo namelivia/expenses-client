@@ -40,7 +40,11 @@ export default {
   },
   computed: {
     formattedValue: function () {
-      if (this.value > 0) return valueFromInt(this.value);
+      let formatter = new Intl.NumberFormat("es-ES", {
+        style: "currency",
+        currency: "EUR",
+      });
+      if (this.value > 0) return formatter.format(valueFromInt(this.value));
       return this.value;
     },
     formattedDate: function () {

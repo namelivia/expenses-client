@@ -28,9 +28,13 @@ export default {
       return this.totals
         .map(function (total) {
           if (total.total < max) {
+            let formatter = new Intl.NumberFormat("es-ES", {
+              style: "currency",
+              currency: "EUR",
+            });
             return {
               user: total.user,
-              amount: valueFromInt(max - total.total),
+              amount: formatter.format(valueFromInt(max - total.total)),
             };
           }
         })
