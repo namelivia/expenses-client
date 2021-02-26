@@ -51,7 +51,7 @@ export default {
     },
     async onSubmit(data) {
       try {
-        putExpense(this.expenseId, data);
+        await putExpense(this.expenseId, data);
         router.replace("/list", () => {
           //TODO: This needs to be translated
           this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast);

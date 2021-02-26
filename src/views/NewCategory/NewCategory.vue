@@ -37,7 +37,7 @@ export default {
     async onSubmit(evt) {
       try {
         evt.preventDefault();
-        postCategory(this.form);
+        await postCategory(this.form);
         router.replace("/list", () => {
           this.$root.$bvToast.toast(
             `Category ${this.form.name} created`,
