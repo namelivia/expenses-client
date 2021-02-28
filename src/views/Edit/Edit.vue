@@ -1,6 +1,5 @@
 <template lang="pug">
 section
-    h1 Edit existing expense
     expense-form(@submit="onSubmit" :initial-data="form")
 </template>
 

@@ -34,7 +34,7 @@ export default {
       default: "",
     },
     date: {
-      type: Date,
+      type: String,
       default: "",
     },
   },
@@ -48,7 +48,7 @@ export default {
       return this.value;
     },
     formattedDate: function () {
-      return new Date(this.date).toLocaleString();
+      return new Date(this.date).toLocaleString("es-ES");
     },
   },
 };

@@ -1,25 +1,18 @@
 <template lang="pug">
 section
     h3(v-if='loading' ) Loading...
-    table.table.table-striped(v-else)
-        thead
-            tr
-                th Value
-                th Name
-                th User
-                th Category
-                th Date
-                th 
-        tbody
-        expense-row(
-            v-for='expense in expenses ' :key='expense.id'
-            :id="expense.id"
-            :name="expense.name"
-            :value="expense.value"
-            :user="expense.user_name"
-            :category="expense.category.name"
-            :date="expense.date"
-        )
+    .table-responsive-md(v-else)
+        table.table.table-striped
+            tbody
+            expense-row(
+                v-for='expense in expenses ' :key='expense.id'
+                :id="expense.id"
+                :name="expense.name"
+                :value="expense.value"
+                :user="expense.user_name"
+                :category="expense.category.name"
+                :date="expense.date"
+            )
 </template>
 
 <script>

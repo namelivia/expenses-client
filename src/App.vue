@@ -1,21 +1,21 @@
 <template lang="pug">
-.plants-background.min-vh-100
+.bg-light.min-vh-100
     b-navbar(toggleable="lg" type="dark" variant="info")
         b-navbar-brand(to="/")
             span(v-t="'navigation.title'")
         b-navbar-toggle(target="nav-collapse")
         b-collapse(id="nav-collapse" is-nav)
             b-navbar-nav
-                b-nav-item(to="/list")
-                  span(v-t="'navigation.list'")
                 b-nav-item(to="/new")
                   span(v-t="'navigation.new'")
+                b-nav-item(to="/list")
+                  span(v-t="'navigation.list'")
                 //b-nav-item(to="/new-category")
                   //span(v-t="'navigation.newCategory'")
             //b-navbar-nav.ml-auto
                 //b-nav-item {{ $i18n.locale }}
                 //b-nav-item {{ currentUserEmail }}
-    b-container.bg-light.text-dark.pb-4.pt-4
+    b-container.text-dark.pb-4.pt-4
         router-view
 </template>
 

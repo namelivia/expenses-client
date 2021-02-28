@@ -1,6 +1,5 @@
 <template lang="pug">
 section
-    h1 Add new expense
     expense-form(@submit="onSubmit")
 </template>
 

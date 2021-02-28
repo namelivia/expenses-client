@@ -31,8 +31,9 @@
         user-selector(@selected="onUserSelected" :selected="expense.user_id")
         category-selector(@selected="onCategorySelected" :selected="expense.category")
         .mt-4
-        b-button.mr-2(type="submit" variant="primary") {{$t('newExpense.submit')}}
-        b-button(type="reset" variant="danger") {{$t('newExpense.reset')}}
+        .float-right
+            b-button.mr-4(type="reset" variant="danger") {{$t('newExpense.reset')}}
+            b-button(type="submit" variant="success") {{$t('newExpense.submit')}}
 </template>
 <script>
 import { valueToInt } from "@/apis/helpers";

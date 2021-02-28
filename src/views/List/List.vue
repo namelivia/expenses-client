@@ -1,6 +1,5 @@
 <template lang="pug">
 section
-    h1(v-t="'list.title'")
     expense-list
 </template>
 
