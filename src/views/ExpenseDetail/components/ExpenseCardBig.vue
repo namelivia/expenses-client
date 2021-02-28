@@ -1,12 +1,11 @@
 <template lang="pug">
 b-spinner(v-if="loading" label="Loading...")
 section(v-else)
-    p.mb-0 Id: {{ expense.id}}
-    p.mb-0 {{$t("expenseDetails.name")}}: {{ expense.name }}
-    p.mb-0 {{$t("expenseDetails.value")}}: {{ formattedValue }}
-    p.mb-0 {{$t("expenseDetails.category")}}: {{ expense.category.name }}
-    p.mb-0 {{$t("expenseDetails.user")}}: {{ expense.user_name }}
-    p.mb-0 {{$t("expenseDetails.date")}}: {{ formattedDate }}
+    p.mb-0 {{ expense.user_name }}
+    p.mb-0 {{ expense.name }}
+    p.mb-0 {{ formattedValue }}
+    p.mb-0 {{ expense.category.name }}
+    p.mb-0 {{ formattedDate }}
     .mt-4
     b-button(variant="danger" v-on:click="onDelete" v-t="'expenseDetails.deleteIt'")
     router-link(:to="{ name: 'edit', params: { expenseId: this.expense.id}}")
@@ -33,7 +32,7 @@ export default {
   },
   computed: {
     formattedDate: function () {
-      return new Date(this.expense.date).toLocaleString();
+      return new Date(this.expense.date).toLocaleString("es-ES");
     },
     formattedValue: function () {
       let formatter = new Intl.NumberFormat("es-ES", {

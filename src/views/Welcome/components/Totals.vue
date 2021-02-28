@@ -2,7 +2,7 @@
 section
     h3(v-if='loading' ) Loading...
     ul(v-else)
-        li(v-for='debt in debts' :key='debt.user')
+        h3(v-for='debt in debts' :key='debt.user')
             | {{ debt.user }} {{$t("totals.owes")}} {{debt.amount}}
 </template>
 
