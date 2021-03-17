@@ -9,6 +9,10 @@ module.exports = {
     ],
   },
   chainWebpack: (config) => {
+    //Eslint autofix
+    config.module.rule('eslint').use('eslint-loader').options({
+      fix: true
+    })
     //Pug loader
     config.module
       .rule("pug")
@@ -21,7 +25,7 @@ module.exports = {
       locale: "en",
       fallbackLocale: "en",
       localeDir: "locales",
-      enableInSFC: false,
-    },
-  },
+      enableInSFC: false
+    }
+  }
 };
