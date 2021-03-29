@@ -20,27 +20,27 @@
 </template>
 
 <script>
-import store from "./currentUser";
+import store from './currentUser'
 export default {
   data: function () {
     return {
       currentUserEmail: undefined,
-    };
+    }
   },
   mounted() {
-    this.getCurrentUser();
+    this.getCurrentUser()
   },
   methods: {
     async getCurrentUser() {
-      const currentUser = await store.getCurrentUser();
-      this.currentUserEmail = currentUser.name;
+      const currentUser = await store.getCurrentUser()
+      this.currentUserEmail = currentUser.name
     },
   },
-};
+}
 </script>
 
 <style lang="scss">
-@import "./assets/styles/custom.scss";
-@import "../node_modules/bootstrap/dist/css/bootstrap.css";
-@import "../node_modules/bootstrap-vue/dist/bootstrap-vue.css";
+@import './assets/styles/custom.scss';
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
 </style>

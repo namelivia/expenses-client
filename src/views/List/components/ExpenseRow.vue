@@ -10,12 +10,12 @@
                 b-button.ml-2(v-t="'expenseRow.details'")
 </template>
 <script>
-import { valueFromInt } from "@/apis/helpers";
+import { valueFromInt } from '@/apis/helpers'
 export default {
   props: {
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     id: {
       type: Number,
@@ -27,29 +27,29 @@ export default {
     },
     user: {
       type: String,
-      default: "",
+      default: '',
     },
     category: {
       type: String,
-      default: "",
+      default: '',
     },
     date: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   computed: {
     formattedValue: function () {
-      let formatter = new Intl.NumberFormat("es-ES", {
-        style: "currency",
-        currency: "EUR",
-      });
-      if (this.value > 0) return formatter.format(valueFromInt(this.value));
-      return this.value;
+      let formatter = new Intl.NumberFormat('es-ES', {
+        style: 'currency',
+        currency: 'EUR',
+      })
+      if (this.value > 0) return formatter.format(valueFromInt(this.value))
+      return this.value
     },
     formattedDate: function () {
-      return new Date(this.date).toLocaleString("es-ES");
+      return new Date(this.date).toLocaleString('es-ES')
     },
   },
-};
+}
 </script>

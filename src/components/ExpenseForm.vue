@@ -36,9 +36,9 @@
             b-button(type="submit" variant="success") {{$t('newExpense.submit')}}
 </template>
 <script>
-import { valueToInt } from "@/apis/helpers";
-import UserSelector from "@/components/UserSelector";
-import CategorySelector from "@/components/CategorySelector";
+import { valueToInt } from '@/apis/helpers'
+import UserSelector from '@/components/UserSelector'
+import CategorySelector from '@/components/CategorySelector'
 export default {
   components: {
     UserSelector,
@@ -49,11 +49,11 @@ export default {
       type: Object,
       default: () => {
         return {
-          name: "",
+          name: '',
           value: null,
           user_id: null,
           category_id: null,
-        };
+        }
       },
     },
   },
@@ -61,49 +61,49 @@ export default {
     return {
       show: true,
       expense: {
-        name: "",
+        name: '',
         value: null,
         user_id: null,
         category_id: null,
       },
-    };
+    }
   },
   watch: {
     initialData: {
       immediate: true,
       handler: function (newData) {
-        this.expense = newData;
+        this.expense = newData
       },
     },
   },
   methods: {
     onUserSelected(selectedUser) {
-      this.expense.user_id = selectedUser;
+      this.expense.user_id = selectedUser
     },
     onCategorySelected(selectedCategory) {
-      this.expense.category_id = selectedCategory;
+      this.expense.category_id = selectedCategory
     },
     async onSubmit(evt) {
       if (evt) {
-        evt.preventDefault();
+        evt.preventDefault()
       }
-      let expense = this.expense;
-      expense.value = valueToInt(this.expense.value);
-      this.$emit("submit", expense);
+      let expense = this.expense
+      expense.value = valueToInt(this.expense.value)
+      this.$emit('submit', expense)
     },
     onReset(evt) {
       if (evt) {
-        evt.preventDefault();
+        evt.preventDefault()
       }
-      this.expense.name = "";
-      this.expense.value = null;
-      this.expense.user_id = null;
-      this.expense.category_id = null;
-      this.show = false;
+      this.expense.name = ''
+      this.expense.value = null
+      this.expense.user_id = null
+      this.expense.category_id = null
+      this.show = false
       this.$nextTick(() => {
-        this.show = true;
-      });
+        this.show = true
+      })
     },
   },
-};
+}
 </script>

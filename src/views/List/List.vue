@@ -4,10 +4,10 @@ section
 </template>
 
 <script>
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from './components/ExpenseList'
 export default {
   components: {
     ExpenseList: ExpenseList,
   },
-};
+}
 </script>

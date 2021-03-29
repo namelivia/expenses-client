@@ -16,9 +16,9 @@ section
 </template>
 
 <script>
-import ExpenseRow from "./ExpenseRow";
-import { getExpenses } from "@/apis/apis";
-import { errorToast } from "@/helpers/ui";
+import ExpenseRow from './ExpenseRow'
+import { getExpenses } from '@/apis/apis'
+import { errorToast } from '@/helpers/ui'
 export default {
   components: {
     expenseRow: ExpenseRow,
@@ -27,21 +27,21 @@ export default {
     return {
       expenses: [],
       loading: true,
-    };
+    }
   },
   mounted: function () {
-    this.loadList();
+    this.loadList()
   },
   methods: {
     async loadList() {
       try {
-        this.expenses = await getExpenses();
+        this.expenses = await getExpenses()
       } catch (err) {
-        this.$bvToast.toast(`Expenses can't be retrieved`, errorToast);
+        this.$bvToast.toast(`Expenses can't be retrieved`, errorToast)
       } finally {
-        this.loading = false;
+        this.loading = false
       }
     },
   },
-};
+}
 </script>

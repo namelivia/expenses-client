@@ -21,43 +21,43 @@ section
 </template>
 
 <script>
-import router from "@/router";
-import { postCategory } from "@/apis/apis";
-import { errorToast, okToast } from "@/helpers/ui";
+import router from '@/router'
+import { postCategory } from '@/apis/apis'
+import { errorToast, okToast } from '@/helpers/ui'
 export default {
   data() {
     return {
       form: {
-        name: "",
+        name: '',
       },
       show: true,
-    };
+    }
   },
   methods: {
     async onSubmit(evt) {
       try {
-        evt.preventDefault();
-        await postCategory(this.form);
-        router.replace("/list", () => {
+        evt.preventDefault()
+        await postCategory(this.form)
+        router.replace('/list', () => {
           this.$root.$bvToast.toast(
             `Category ${this.form.name} created`,
-            okToast
-          );
-        });
+            okToast,
+          )
+        })
       } catch (err) {
-        this.$bvToast.toast(`Category could not be created`, errorToast);
+        this.$bvToast.toast(`Category could not be created`, errorToast)
       }
     },
     onReset(evt) {
       if (evt) {
-        evt.preventDefault();
+        evt.preventDefault()
       }
-      this.form.name = "";
-      this.show = false;
+      this.form.name = ''
+      this.show = false
       this.$nextTick(() => {
-        this.show = true;
-      });
+        this.show = true
+      })
     },
   },
-};
+}
 </script>

@@ -15,61 +15,61 @@
         )
 </template>
 <script>
-import { getCategories } from "@/apis/apis";
-import { errorToast } from "@/helpers/ui";
+import { getCategories } from '@/apis/apis'
+import { errorToast } from '@/helpers/ui'
 export default {
   props: {
     selected: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
     return {
       categories: [],
-      category: "",
+      category: '',
       loading: true,
-    };
+    }
   },
   computed: {
     categoryOptions: function () {
       //TODO: This needs to be translated
-      let options = [{ value: "", text: "Select a category", disabled: true }];
+      let options = [{ value: '', text: 'Select a category', disabled: true }]
       return options.concat(
         this.categories.map((category) => {
           return {
             value: category.id,
             text: category.name,
-          };
-        })
-      );
+          }
+        }),
+      )
     },
   },
   watch: {
     selected: {
       immediate: true,
       handler: function (newData) {
-        this.category = newData;
+        this.category = newData
       },
     },
   },
   mounted: function () {
-    this.loadCategories();
+    this.loadCategories()
   },
   methods: {
     async loadCategories() {
       try {
-        this.categories = await getCategories();
+        this.categories = await getCategories()
       } catch (err) {
         //TODO: This needs to be translated
-        this.$bvToast.toast(`Categories can't be retrieved`, errorToast);
+        this.$bvToast.toast(`Categories can't be retrieved`, errorToast)
       } finally {
-        this.loading = false;
+        this.loading = false
       }
     },
     onChange(evt) {
-      this.$emit("selected", evt);
+      this.$emit('selected', evt)
     },
   },
-};
+}
 </script>

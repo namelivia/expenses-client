@@ -6,7 +6,7 @@ section
 </template>
 
 <script>
-import ExpenseCardBig from "./components/ExpenseCardBig";
+import ExpenseCardBig from './components/ExpenseCardBig'
 export default {
   components: {
     ExpenseCardBig,
@@ -17,5 +17,5 @@ export default {
       default: 0,
     },
   },
-};
+}
 </script>
