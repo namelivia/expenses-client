@@ -1,5 +1,5 @@
 # base builder stage
-FROM node:12-stretch as base-builder
+FROM node:14-stretch as base-builder
 WORKDIR /app
 COPY package*.json ./
 COPY . .
