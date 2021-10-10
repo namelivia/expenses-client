@@ -13,6 +13,12 @@ section
                 :category="expense.category.name"
                 :date="expense.date"
             )
+    nav(aria-label="Pagination")
+        ul.pagination
+            li.page-item(v-if='showPrevious')
+                a.page-link(:href="previousPage") {{$t('list.Previous')}}
+            li.page-item.ml-auto
+                a.page-link(:href="nextPage") {{$t('list.Next')}}
 </template>
 
 <script>
@@ -26,16 +32,29 @@ export default {
   data: function () {
     return {
       expenses: [],
+      page: 0,
       loading: true,
     }
   },
+  computed: {
+    nextPage: function () {
+      return `?page=${this.page + 1}`
+    },
+    previousPage: function () {
+      return `?page=${this.page - 1}`
+    },
+    showPrevious: function () {
+      return this.page > 0
+    },
+  },
   mounted: function () {
+    this.page = this.$route.query.page ? parseInt(this.$route.query.page) : 0
     this.loadList()
   },
   methods: {
     async loadList() {
       try {
-        this.expenses = await getExpenses()
+        this.expenses = await getExpenses(this.page)
       } catch (err) {
         this.$bvToast.toast(`Expenses can't be retrieved`, errorToast)
       } finally {

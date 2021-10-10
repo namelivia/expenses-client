@@ -9,7 +9,9 @@
     "welcome": "Welcome to the expenses app"
   },
   "list": {
-    "title": "Expense list"
+    "title": "Expense list",
+    "Previous": "Previous",
+    "Next": "Next"
   },
   "expenseDetails": {
     "name": "Name",

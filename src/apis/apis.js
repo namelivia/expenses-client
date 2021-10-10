@@ -6,9 +6,9 @@ export const getExpense = async (expenseId) => {
   return response.data
 }
 
-export const getExpenses = async () => {
+export const getExpenses = async (page) => {
   const response = await axios.get(
-    `${process.env.VUE_APP_API_ENDPOINT}/expenses`,
+    `${process.env.VUE_APP_API_ENDPOINT}/expenses?page=${page}`,
   )
   return response.data
 }

@@ -9,7 +9,9 @@
     "welcome": "Bienvenido a la app de gastos"
   },
   "list": {
-    "title": "Lista de gastos"
+    "title": "Lista de gastos",
+    "Previous": "Anterior",
+    "Next": "Siguiente"
   },
   "expenseDetails": {
     "name": "Nombre",
