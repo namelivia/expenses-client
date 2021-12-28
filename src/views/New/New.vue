@@ -7,7 +7,7 @@ section
 import router from '@/router'
 import ExpenseForm from '@/components/ExpenseForm'
 import { postExpense } from '@/apis/apis'
-import { errorToast, okToast } from '@/helpers/ui'
+//import { errorToast, okToast } from '@/helpers/ui'
 export default {
   components: {
     ExpenseForm,
@@ -17,10 +17,10 @@ export default {
       try {
         await postExpense(data)
         router.replace('/list', () => {
-          this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast)
+          //this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast)
         })
       } catch (err) {
-        this.$bvToast.toast(`Expense could not be created`, errorToast)
+        //this.$bvToast.toast(`Expense could not be created`, errorToast)
       }
     },
   },

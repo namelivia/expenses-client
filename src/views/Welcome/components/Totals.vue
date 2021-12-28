@@ -8,7 +8,7 @@ section
 
 <script>
 import { getTotals } from '@/apis/apis'
-import { errorToast } from '@/helpers/ui'
+//import { errorToast } from '@/helpers/ui'
 import { valueFromInt } from '@/apis/helpers'
 export default {
   data: function () {
@@ -50,7 +50,7 @@ export default {
         this.totals = await getTotals()
       } catch (err) {
         //TODO: This needs to be translated
-        this.$bvToast.toast(`Totals can't be retrieved`, errorToast)
+        //this.$bvToast.toast(`Totals can't be retrieved`, errorToast)
       } finally {
         this.loading = false
       }

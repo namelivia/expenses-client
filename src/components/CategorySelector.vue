@@ -1,22 +1,16 @@
 <template lang="pug">
-    b-spinner(v-if="loading" label="Loading...")
-    b-form-group(
-        id="category-input-group"
+    loading(v-if='loading')
+    selector(
+        id="category"
         :label="$t('categorySelector.category')"
-        label-for="category"
+        :options="categoryOptions"
+        @selected="onChange"
         v-else
-    )
-        b-form-select(
-            id="category"
-            name="category"
-            v-model="category"
-            @change="onChange($event)"
-            :options="categoryOptions"
-        )
+      )
 </template>
 <script>
 import { getCategories } from '@/apis/apis'
-import { errorToast } from '@/helpers/ui'
+//import { errorToast } from '@/helpers/ui'
 export default {
   props: {
     selected: {
@@ -62,7 +56,7 @@ export default {
         this.categories = await getCategories()
       } catch (err) {
         //TODO: This needs to be translated
-        this.$bvToast.toast(`Categories can't be retrieved`, errorToast)
+        //this.$bvToast.toast(`Categories can't be retrieved`, errorToast)
       } finally {
         this.loading = false
       }

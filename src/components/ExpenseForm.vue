@@ -1,39 +1,26 @@
 <template lang="pug">
-    b-form(@submit="onSubmit" @reset="onReset"  v-if="show")
-        b-form-group(
-            id="name-input-group"
-            :label="$t('expenseForm.name')"
-            label-for="name"
+    form(@submit="onSubmit" @reset="onReset"  v-if="show")
+        text-input(
+          :name="name"
+          :label="$t('expenseForm.name')"
+          :placeholder="$t('expenseForm.enterExpenseName')"
+          @update="expense.name = $event"
+          required
         )
-            b-form-input(
-                id="name"
-                name="name"
-                v-model="expense.name"
-                type="text"
-                required
-                :placeholder="$t('expenseForm.enterExpenseName')"
-            )
-        b-form-group(
-            id="value-input-group"
-            :label="$t('expenseForm.value')"
-            label-for="value"
+        number-input(
+          :name="value"
+          :label="$t('expenseForm.value')"
+          :placeholder="$t('expenseForm.enterExpenseValue')"
+          @update="expense.value = $event"
+          step="0.01"
+          min="0"
+          required
         )
-            b-form-input(
-                id="value"
-                name="value"
-                v-model="expense.value"
-                type="number"
-                step="0.01"
-                min="0"
-                required
-                :placeholder="$t('expenseForm.enterExpenseValue')"
-            )
         user-selector(@selected="onUserSelected" :selected="expense.user_id")
         category-selector(@selected="onCategorySelected" :selected="expense.category")
         .mt-4
-        .float-right
-            b-button.mr-4(type="reset" variant="danger") {{$t('newExpense.reset')}}
-            b-button(type="submit" variant="success") {{$t('newExpense.submit')}}
+        submit-button.mr-2(:text="$t('newExpense.submit')")
+        reset-button(:text="$t('newExpense.reset')")
 </template>
 <script>
 import { valueToInt } from '@/apis/helpers'

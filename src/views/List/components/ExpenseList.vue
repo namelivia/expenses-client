@@ -24,7 +24,7 @@ section
 <script>
 import ExpenseRow from './ExpenseRow'
 import { getExpenses } from '@/apis/apis'
-import { errorToast } from '@/helpers/ui'
+//import { errorToast } from '@/helpers/ui'
 export default {
   components: {
     expenseRow: ExpenseRow,
@@ -56,7 +56,7 @@ export default {
       try {
         this.expenses = await getExpenses(this.page)
       } catch (err) {
-        this.$bvToast.toast(`Expenses can't be retrieved`, errorToast)
+        //this.$bvToast.toast(`Expenses can't be retrieved`, errorToast)
       } finally {
         this.loading = false
       }

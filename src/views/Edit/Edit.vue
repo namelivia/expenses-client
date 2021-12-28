@@ -6,7 +6,7 @@ section
 <script>
 import router from '@/router'
 import { getExpense, putExpense } from '@/apis/apis'
-import { errorToast, okToast } from '@/helpers/ui'
+//import { errorToast, okToast } from '@/helpers/ui'
 import ExpenseForm from '@/components/ExpenseForm'
 import { valueFromInt } from '@/apis/helpers'
 export default {
@@ -43,7 +43,7 @@ export default {
         this.form.user_id = expense.user_id
         this.form.category = expense.category.id
       } catch (err) {
-        this.$bvToast.toast(`Expense can't be retrieved`, errorToast)
+        //this.$bvToast.toast(`Expense can't be retrieved`, errorToast)
       } finally {
         this.loading = false
       }
@@ -53,11 +53,11 @@ export default {
         await putExpense(this.expenseId, data)
         router.replace('/list', () => {
           //TODO: This needs to be translated
-          this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast)
+          //this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast)
         })
       } catch (err) {
         //TODO: This needs to be translate d
-        this.$bvToast.toast(`Expense could not be updated`, errorToast)
+        //this.$bvToast.toast(`Expense could not be updated`, errorToast)
       }
     },
   },

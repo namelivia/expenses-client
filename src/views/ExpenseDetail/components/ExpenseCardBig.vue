@@ -1,5 +1,5 @@
 <template lang="pug">
-b-spinner(v-if="loading" label="Loading...")
+loading(v-if='loading')
 section(v-else)
     p.mb-0 {{ expense.user_name }}
     p.mb-0 {{ expense.name }}
@@ -7,14 +7,14 @@ section(v-else)
     p.mb-0 {{ expense.category.name }}
     p.mb-0 {{ formattedDate }}
     .mt-4
-    b-button(variant="danger" v-on:click="onDelete" v-t="'expenseDetails.deleteIt'")
+    danger-button(@click="onDelete" :text="$t('expenseDetails.deleteIt')")
     router-link(:to="{ name: 'edit', params: { expenseId: this.expense.id}}")
-        b-button.ml-2(v-t="'expenseDetails.editIt'")
+        secondary-button.ml-2(:text="$t('expenseDetails.editIt')")
 </template>
 
 <script>
 import { getExpense, deleteExpense } from '@/apis/apis'
-import { errorToast, okToast } from '@/helpers/ui'
+//import { errorToast, okToast } from '@/helpers/ui'
 import { valueFromInt } from '@/apis/helpers'
 import router from '@/router'
 export default {
@@ -58,7 +58,7 @@ export default {
       try {
         this.expense = await getExpense(expenseId)
       } catch (err) {
-        this.$bvToast.toast(`Expense can't be retrieved`, errorToast)
+        //this.$bvToast.toast(`Expense can't be retrieved`, errorToast)
       } finally {
         this.loading = false
       }
@@ -68,10 +68,10 @@ export default {
       try {
         deleteExpense(this.expense.id)
         router.replace('/list', () => {
-          this.$root.$bvToast.toast(`Expense removed`, okToast)
+          //this.$root.$bvToast.toast(`Expense removed`, okToast)
         })
       } catch (err) {
-        this.$bvToast.toast(`Expense could not be removed`, errorToast)
+        //this.$bvToast.toast(`Expense could not be removed`, errorToast)
       }
     },
   },

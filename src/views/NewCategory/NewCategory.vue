@@ -1,29 +1,23 @@
 <template lang="pug">
 section
     section-title(text="Add new category")
-    b-form(@submit="onSubmit" @reset="onReset"  v-if="show")
-        b-form-group(
-            id="name-input-group"
+    form(@submit="onSubmit" @reset="onReset"  v-if="show")
+        text-input(
+            :name="name"
             :label="$t('newCategory.name')"
-            label-for="name"
+            :placeholder="$t('newCategory.enterCategoryName')"
+            @update="form.name = $event"
+            required
         )
-            b-form-input(
-                id="name"
-                name="name"
-                v-model="form.name"
-                type="text"
-                required
-                :placeholder="$t('newCategory.enterCategoryName')"
-            )
         .mt-4
-        b-button.mr-2(type="submit" variant="primary") {{$t('newCategory.submit')}}
-        b-button(type="reset" variant="danger") {{$t('newCategory.reset')}}
+        submit-button.mr-2(:text="$t('newCategory.submit')")
+        reset-button(:text="$t('newCategory.reset')")
 </template>
 
 <script>
 import router from '@/router'
 import { postCategory } from '@/apis/apis'
-import { errorToast, okToast } from '@/helpers/ui'
+//import { errorToast, okToast } from '@/helpers/ui'
 export default {
   data() {
     return {
@@ -39,13 +33,13 @@ export default {
         evt.preventDefault()
         await postCategory(this.form)
         router.replace('/list', () => {
-          this.$root.$bvToast.toast(
+          /*this.$root.$bvToast.toast(
             `Category ${this.form.name} created`,
             okToast,
-          )
+          )*/
         })
       } catch (err) {
-        this.$bvToast.toast(`Category could not be created`, errorToast)
+        //this.$bvToast.toast(`Category could not be created`, errorToast)
       }
     },
     onReset(evt) {

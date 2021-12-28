@@ -1,22 +1,16 @@
 <template lang="pug">
-    b-spinner(v-if="loading" label="Loading...")
-    b-form-group(
-        id="user-input-group"
+    loading(v-if='loading')
+    selector(
+        id="user"
         :label="$t('userSelector.user')"
-        label-for="user"
+        :options="userOptions"
+        @selected="onChange"
         v-else
-    )
-        b-form-select(
-            id="user"
-            name="user"
-            v-model="user"
-            @change="onChange($event)"
-            :options="userOptions"
-        )
+      )
 </template>
 <script>
 import { getUsers } from '@/apis/apis'
-import { errorToast } from '@/helpers/ui'
+//import { errorToast } from '@/helpers/ui'
 export default {
   props: {
     selected: {
@@ -62,7 +56,7 @@ export default {
         this.users = await getUsers()
       } catch (err) {
         //TODO: This needs to be translated
-        this.$bvToast.toast(`Users can't be retrieved`, errorToast)
+        //this.$bvToast.toast(`Users can't be retrieved`, errorToast)
       } finally {
         this.loading = false
       }

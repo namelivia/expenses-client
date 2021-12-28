@@ -7,7 +7,7 @@
         td {{ formattedDate }}
         td
             router-link(:to="{ name: 'expense', params: { expenseId: id}}")
-                b-button.ml-2(v-t="'expenseRow.details'")
+                regular-button.ml-2(:text="$t('expenseRow.details')")
 </template>
 <script>
 import { valueFromInt } from '@/apis/helpers'
