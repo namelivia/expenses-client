@@ -1,6 +1,6 @@
 <template lang="pug">
 section
-    h1 Add new category
+    section-title(text="Add new category")
     b-form(@submit="onSubmit" @reset="onReset"  v-if="show")
         b-form-group(
             id="name-input-group"
