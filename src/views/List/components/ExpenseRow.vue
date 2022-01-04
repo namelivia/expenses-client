@@ -3,7 +3,7 @@
         td {{ formattedValue }}
         td {{ name }}
         td {{ user }}
-        td {{ category }}
+        td(class="hidden md:block") {{ category }}
         td {{ formattedDate }}
         td
             router-link(:to="{ name: 'expense', params: { expenseId: id}}")

@@ -1,8 +1,8 @@
 <template lang="pug">
 section
-    h3(v-if='loading' ) Loading...
-    .table-responsive-md(v-else)
-        table.table.table-striped
+    loading(v-if='loading' )
+    div
+        styled-table
             tbody
             expense-row(
                 v-for='expense in expenses ' :key='expense.id'
@@ -13,12 +13,13 @@ section
                 :category="expense.category.name"
                 :date="expense.date"
             )
-    nav(aria-label="Pagination")
-        ul.pagination
-            li.page-item(v-if='showPrevious')
-                a.page-link(:href="previousPage") {{$t('list.Previous')}}
-            li.page-item.ml-auto
-                a.page-link(:href="nextPage") {{$t('list.Next')}}
+    pagination(
+      :previous-label="$t('list.Previous')"
+      :next-label="$t('list.Next')"
+      :show-previous="showPrevious"
+      :previous-link="previousPage"
+      :next-link="nextPage"
+    )
 </template>
 
 <script>
