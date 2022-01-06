@@ -1,6 +1,6 @@
 <template lang="pug">
 section
-    h3(v-if='loading' ) Loading...
+    loading(v-if='loading' )
     div(v-else)
         expense-card-big(:expense-id="expenseId")
 </template>

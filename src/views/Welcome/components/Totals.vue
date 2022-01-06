@@ -1,8 +1,8 @@
 <template lang="pug">
 section
-    h3(v-if='loading' ) Loading...
+    loading(v-if='loading' )
     ul(v-else)
-        h3(v-for='debt in debts' :key='debt.user')
+        h3(class="text-center text-6xl leading-relaxed" v-for='debt in debts' :key='debt.user')
             | {{ debt.user }} {{$t("totals.owes")}} {{debt.amount}}
 </template>
 
