@@ -4,7 +4,7 @@ section
 </template>
 
 <script>
-import ExpenseList from './components/ExpenseList'
+import ExpenseList from '@/views/List/components/ExpenseList.vue'
 export default {
   components: {
     ExpenseList: ExpenseList,

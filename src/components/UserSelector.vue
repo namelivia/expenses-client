@@ -1,12 +1,12 @@
 <template lang="pug">
-    loading(v-if='loading')
-    selector(
-        id="user"
-        :label="$t('userSelector.user')"
-        :options="userOptions"
-        @selected="onChange"
-        v-else
-      )
+loading(v-if='loading')
+selector(
+    id="user"
+    :label="$t('userSelector.user')"
+    :options="userOptions"
+    @selected="onChange"
+    v-else
+  )
 </template>
 <script>
 import { getUsers } from '@/apis/apis'

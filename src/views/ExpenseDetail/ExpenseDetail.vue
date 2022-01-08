@@ -6,7 +6,7 @@ section
 </template>
 
 <script>
-import ExpenseCardBig from './components/ExpenseCardBig'
+import ExpenseCardBig from '@/views/ExpenseDetail/components/ExpenseCardBig.vue'
 export default {
   components: {
     ExpenseCardBig,

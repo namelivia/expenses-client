@@ -1,12 +1,12 @@
 <template lang="pug">
-    loading(v-if='loading')
-    selector(
-        id="category"
-        :label="$t('categorySelector.category')"
-        :options="categoryOptions"
-        @selected="onChange"
-        v-else
-      )
+loading(v-if='loading')
+selector(
+    id="category"
+    :label="$t('categorySelector.category')"
+    :options="categoryOptions"
+    @selected="onChange"
+    v-else
+  )
 </template>
 <script>
 import { getCategories } from '@/apis/apis'

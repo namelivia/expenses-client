@@ -23,7 +23,7 @@ section
 </template>
 
 <script>
-import ExpenseRow from './ExpenseRow'
+import ExpenseRow from '@/views/List/components/ExpenseRow.vue'
 import { getExpenses } from '@/apis/apis'
 //import { errorToast } from '@/helpers/ui'
 export default {

@@ -5,7 +5,7 @@ section
 
 <script>
 import router from '@/router'
-import ExpenseForm from '@/components/ExpenseForm'
+import ExpenseForm from '@/components/ExpenseForm.vue'
 import { postExpense } from '@/apis/apis'
 //import { errorToast, okToast } from '@/helpers/ui'
 export default {
