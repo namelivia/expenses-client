@@ -7,7 +7,7 @@ section
 import router from '@/router'
 import { getExpense, putExpense } from '@/apis/apis'
 //import { errorToast, okToast } from '@/helpers/ui'
-import ExpenseForm from '@/components/ExpenseForm'
+import ExpenseForm from '@/components/ExpenseForm.vue'
 import { valueFromInt } from '@/apis/helpers'
 export default {
   components: {

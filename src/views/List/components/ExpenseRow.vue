@@ -1,13 +1,13 @@
 <template lang="pug">
-    tr
-        td {{ formattedValue }}
-        td {{ name }}
-        td {{ user }}
-        td(class="hidden md:block") {{ category }}
-        td {{ formattedDate }}
-        td
-            router-link(:to="{ name: 'expense', params: { expenseId: id}}")
-                regular-button.ml-2(:text="$t('expenseRow.details')")
+tr
+    td {{ formattedValue }}
+    td {{ name }}
+    td {{ user }}
+    td(class="hidden md:block") {{ category }}
+    td {{ formattedDate }}
+    td
+        router-link(:to="{ name: 'expense', params: { expenseId: id}}")
+            regular-button.ml-2(:text="$t('expenseRow.details')")
 </template>
 <script>
 import { valueFromInt } from '@/apis/helpers'

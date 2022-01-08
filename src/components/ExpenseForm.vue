@@ -1,31 +1,31 @@
 <template lang="pug">
-    form(@submit="onSubmit" @reset="onReset"  v-if="show")
-        text-input(
-          :name="name"
-          :label="$t('expenseForm.name')"
-          :placeholder="$t('expenseForm.enterExpenseName')"
-          @update="expense.name = $event"
-          required
-        )
-        number-input(
-          :name="value"
-          :label="$t('expenseForm.value')"
-          :placeholder="$t('expenseForm.enterExpenseValue')"
-          @update="expense.value = $event"
-          step="0.01"
-          min="0"
-          required
-        )
-        user-selector(@selected="onUserSelected" :selected="expense.user_id")
-        category-selector(@selected="onCategorySelected" :selected="expense.category")
-        .mt-4
-        submit-button.mr-2(:text="$t('newExpense.submit')")
-        reset-button(:text="$t('newExpense.reset')")
+form(@submit="onSubmit" @reset="onReset"  v-if="show")
+    text-input(
+      :name="name"
+      :label="$t('expenseForm.name')"
+      :placeholder="$t('expenseForm.enterExpenseName')"
+      @update="expense.name = $event"
+      required
+    )
+    number-input(
+      :name="value"
+      :label="$t('expenseForm.value')"
+      :placeholder="$t('expenseForm.enterExpenseValue')"
+      @update="expense.value = $event"
+      step="0.01"
+      min="0"
+      required
+    )
+    user-selector(@selected="onUserSelected" :selected="expense.user_id")
+    category-selector(@selected="onCategorySelected" :selected="expense.category")
+    .mt-4
+    submit-button.mr-2(:text="$t('newExpense.submit')")
+    reset-button(:text="$t('newExpense.reset')")
 </template>
 <script>
 import { valueToInt } from '@/apis/helpers'
-import UserSelector from '@/components/UserSelector'
-import CategorySelector from '@/components/CategorySelector'
+import UserSelector from '@/components/UserSelector.vue'
+import CategorySelector from '@/components/CategorySelector.vue'
 export default {
   components: {
     UserSelector,
