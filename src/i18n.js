@@ -1,10 +1,11 @@
 import { createI18n } from 'vue-i18n'
 import { nextTick } from 'vue'
 
-export const SUPPORT_LOCALES = ['en', 'es']
-
-export function setupI18n(options = { locale: 'en' }) {
+async function setupI18n(
+  options = { locale: import.meta.env.VITE_APP_I18N_LOCALE },
+) {
   const i18n = createI18n(options)
+  await loadLocaleMessages(i18n, options.locale)
   setI18nLanguage(i18n, options.locale)
   return i18n
 }
@@ -29,3 +30,5 @@ export async function loadLocaleMessages(i18n, locale) {
 
   return nextTick()
 }
+
+export const i18n = await setupI18n()
