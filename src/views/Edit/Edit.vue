@@ -43,6 +43,7 @@ export default {
         this.form.user_id = expense.user_id
         this.form.category = expense.category.id
       } catch (err) {
+        const toast = useToast()
         toast.error(`Expense can't be retrieved`)
       } finally {
         this.loading = false
