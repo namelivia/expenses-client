@@ -55,23 +55,24 @@ export default {
   },
   methods: {
     async loadExpense(expenseId) {
+      const toast = useToast()
       try {
         this.expense = await getExpense(expenseId)
       } catch (err) {
-        //this.$bvToast.toast(`Expense can't be retrieved`, errorToast)
+        toast.error(`Expense can't be retrieved`)
       } finally {
         this.loading = false
       }
     },
     async onDelete(evt) {
+      const toast = useToast()
       evt.preventDefault()
       try {
-        deleteExpense(this.expense.id)
-        router.replace('/list', () => {
-          //this.$root.$bvToast.toast(`Expense removed`, okToast)
-        })
+        await deleteExpense(this.expense.id)
+        toast.success(`Expense removed`)
+        router.replace('/list')
       } catch (err) {
-        //this.$bvToast.toast(`Expense could not be removed`, errorToast)
+        toast.error(`Expense could not be removed`)
       }
     },
   },

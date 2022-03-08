@@ -10,7 +10,7 @@ selector(
 </template>
 <script>
 import { getUsers } from '@/apis/apis'
-//import { errorToast } from '@/helpers/ui'
+import { useToast } from 'vue-toastification'
 export default {
   props: {
     selected: {
@@ -52,11 +52,12 @@ export default {
   },
   methods: {
     async loadUsers() {
+      const toast = useToast()
       try {
         this.users = await getUsers()
       } catch (err) {
         //TODO: This needs to be translated
-        //this.$bvToast.toast(`Users can't be retrieved`, errorToast)
+        toast.error(`Users can't be retrieved`)
       } finally {
         this.loading = false
       }

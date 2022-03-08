@@ -7,20 +7,20 @@ section
 import router from '@/router'
 import ExpenseForm from '@/components/ExpenseForm.vue'
 import { postExpense } from '@/apis/apis'
-//import { errorToast, okToast } from '@/helpers/ui'
+import { useToast } from 'vue-toastification'
 export default {
   components: {
     ExpenseForm,
   },
   methods: {
     async onSubmit(data) {
+      const toast = useToast()
       try {
         await postExpense(data)
-        router.replace('/list', () => {
-          //this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast)
-        })
+        toast.success(`Expense ${data.name} created`)
+        router.replace('/list')
       } catch (err) {
-        //this.$bvToast.toast(`Expense could not be created`, errorToast)
+        toast.error(`Expense could not be created`)
       }
     },
   },

@@ -10,7 +10,7 @@ selector(
 </template>
 <script>
 import { getCategories } from '@/apis/apis'
-//import { errorToast } from '@/helpers/ui'
+import { useToast } from 'vue-toastification'
 export default {
   props: {
     selected: {
@@ -52,11 +52,12 @@ export default {
   },
   methods: {
     async loadCategories() {
+      const toast = useToast()
       try {
         this.categories = await getCategories()
       } catch (err) {
         //TODO: This needs to be translated
-        //this.$bvToast.toast(`Categories can't be retrieved`, errorToast)
+        toast.error(`Categories can't be retrieved`)
       } finally {
         this.loading = false
       }

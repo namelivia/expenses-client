@@ -6,7 +6,7 @@ section
 <script>
 import router from '@/router'
 import { getExpense, putExpense } from '@/apis/apis'
-//import { errorToast, okToast } from '@/helpers/ui'
+import { useToast } from 'vue-toastification'
 import ExpenseForm from '@/components/ExpenseForm.vue'
 import { valueFromInt } from '@/apis/helpers'
 export default {
@@ -43,21 +43,21 @@ export default {
         this.form.user_id = expense.user_id
         this.form.category = expense.category.id
       } catch (err) {
-        //this.$bvToast.toast(`Expense can't be retrieved`, errorToast)
+        toast.error(`Expense can't be retrieved`)
       } finally {
         this.loading = false
       }
     },
     async onSubmit(data) {
+      const toast = useToast()
       try {
         await putExpense(this.expenseId, data)
-        router.replace('/list', () => {
-          //TODO: This needs to be translated
-          //this.$root.$bvToast.toast(`Expense ${data.name} created`, okToast)
-        })
+        //TODO: This needs to be translated
+        toast.success(`Expense ${data.name} created`)
+        router.replace('/list')
       } catch (err) {
         //TODO: This needs to be translate d
-        //this.$bvToast.toast(`Expense could not be updated`, errorToast)
+        toast.error(`Expense could not be updated`)
       }
     },
   },
