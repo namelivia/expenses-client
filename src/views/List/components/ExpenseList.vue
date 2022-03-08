@@ -25,7 +25,7 @@ section
 <script>
 import ExpenseRow from '@/views/List/components/ExpenseRow.vue'
 import { getExpenses } from '@/apis/apis'
-//import { errorToast } from '@/helpers/ui'
+import { useToast } from 'vue-toastification'
 export default {
   components: {
     expenseRow: ExpenseRow,
@@ -54,10 +54,11 @@ export default {
   },
   methods: {
     async loadList() {
+      const toast = useToast()
       try {
         this.expenses = await getExpenses(this.page)
       } catch (err) {
-        //this.$bvToast.toast(`Expenses can't be retrieved`, errorToast)
+        toast.error(`Expenses can't be retrieved`)
       } finally {
         this.loading = false
       }

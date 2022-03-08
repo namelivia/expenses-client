@@ -8,7 +8,7 @@ section
 
 <script>
 import { getTotals } from '@/apis/apis'
-//import { errorToast } from '@/helpers/ui'
+import { useToast } from 'vue-toastification'
 import { valueFromInt } from '@/apis/helpers'
 export default {
   data: function () {
@@ -46,11 +46,12 @@ export default {
   },
   methods: {
     async loadTotals() {
+      const toast = useToast()
       try {
         this.totals = await getTotals()
       } catch (err) {
         //TODO: This needs to be translated
-        //this.$bvToast.toast(`Totals can't be retrieved`, errorToast)
+        toast.error(`Totals can't be retrieved`)
       } finally {
         this.loading = false
       }
