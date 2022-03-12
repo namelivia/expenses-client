@@ -63,6 +63,7 @@ export default {
       },
     },
   },
+  emits: ['submit'],
   methods: {
     onUserSelected(selectedUser) {
       this.expense.user_id = selectedUser
