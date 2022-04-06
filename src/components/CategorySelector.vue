@@ -4,6 +4,7 @@ selector(
     id="category"
     :label="$t('categorySelector.category')"
     :options="categoryOptions"
+    :initialData="category"
     @selected="onChange"
     v-else
   )

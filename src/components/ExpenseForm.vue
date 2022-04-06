@@ -3,6 +3,7 @@ form(@submit="onSubmit" @reset="onReset"  v-if="show")
     text-input(
       :name="name"
       :label="$t('expenseForm.name')"
+      :text="expense.name"
       :placeholder="$t('expenseForm.enterExpenseName')"
       @update="expense.name = $event"
       required
@@ -10,6 +11,7 @@ form(@submit="onSubmit" @reset="onReset"  v-if="show")
     number-input(
       :name="value"
       :label="$t('expenseForm.value')"
+      :amount="expense.value"
       :placeholder="$t('expenseForm.enterExpenseValue')"
       @update="expense.value = $event"
       step="0.01"

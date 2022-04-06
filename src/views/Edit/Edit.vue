@@ -54,7 +54,7 @@ export default {
       try {
         await putExpense(this.expenseId, data)
         //TODO: This needs to be translated
-        toast.success(`Expense ${data.name} created`)
+        toast.success(`Expense ${data.name} updated`)
         router.replace('/list')
       } catch (err) {
         //TODO: This needs to be translate d

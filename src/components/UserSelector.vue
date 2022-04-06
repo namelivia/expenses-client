@@ -3,6 +3,7 @@ loading(v-if='loading')
 selector(
     id="user"
     :label="$t('userSelector.user')"
+    :initialData="user"
     :options="userOptions"
     @selected="onChange"
     v-else
