@@ -64,3 +64,10 @@ export const postCategory = async (data) => {
   )
   return response.data
 }
+
+export const getReport = async () => {
+  const response = await axios.get(
+    `${import.meta.env.VITE_APP_API_ENDPOINT}/reports`,
+  )
+  return response.data
+}
