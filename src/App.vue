@@ -4,6 +4,8 @@
     :links="links"
     :locale="$i18n.locale"
     :current-user-email="currentUserEmail"
+    :current-user-name="currentUserName"
+    :current-user-picture="currentUserPicture"
     title="Expenses App"
     :imageBig="imageBigUrl"
     :imageSmall="imageSmallUrl"
@@ -18,6 +20,8 @@ export default {
   data: function () {
     return {
       currentUserEmail: undefined,
+      currentUserName: undefined,
+      currentUserPicture: undefined,
       links: [
         { id: 1, text: this.$i18n.t('navigation.new'), href: '/new' },
         { id: 2, text: this.$i18n.t('navigation.list'), href: '/list' },
@@ -41,6 +45,8 @@ export default {
         import.meta.env.VITE_APP_API_ENDPOINT,
       )
       this.currentUserEmail = currentUser.name
+      this.currentUserName = currentUser.name
+      this.currentUserPicture = currentUser.picture
     },
   },
 }
