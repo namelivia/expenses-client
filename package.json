@@ -14,7 +14,7 @@
     "axios": "^0.25.0",
     "image-blob-reduce": "^4.1.0",
     "vue": "^3.4.15",
-    "vue-i18n": "^9.9.0",
+    "vue-i18n": "^9.9.1",
     "vue-router": "^4.2.5",
     "vue-toastification": "^2.0.0-rc.5"
   },
